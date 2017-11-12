@@ -1,23 +1,44 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from "react";
+import LostView from "./LostView";
+import FoundView from "./FoundView";
+import { StyleSheet, Text, View, Button } from "react-native";
+import { StackNavigator } from "react-navigation";
 
-export default class App extends React.Component {
+class HomeScreen extends Component {
+  static navigationOptions = {
+    title: "Home"
+  };
+
   render() {
+    const { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+        <Text>I found your losts</Text>
+        <Button
+          onPress={() => navigate("LostView")}
+          title="Lost"
+          color="#841584"
+          accessibilityLabel="What did you lost?"
+        />
+        <Button
+          onPress={() => navigate("FoundView")}
+          title="Found"
+          color="#841584"
+          accessibilityLabel="We can help you"
+        />
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+const Navigator = StackNavigator({
+  Home: { screen: HomeScreen },
+  LostView: { screen: LostView },
+  FoundView: { screen: FoundView }
 });
+
+export default class App extends Component {
+  render() {
+    return <Navigator />;
+  }
+}

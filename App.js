@@ -22,20 +22,22 @@ class HomeScreen extends Component {
         style={styles.logo}
         source={require('./Assets/logo.png')}
         />
+        <View style={styles.buttonPanel} >
         <Button
           onPress={() => navigate("LostView")}
           title="Lost"
-          color="rgb(30,30,30)"
+          color="rgb(112,99,85)"
           accessibilityLabel="What did you lost?"
-          backgroundColor='rgb(235, 192, 47)'
+          backgroundColor="rgb(235, 192, 47)"
         />
         <Button
           onPress={() => navigate("FoundView")}
           title="Found"
-          color="rgb(30,30,30)"
+          color="rgb(112,99,85)"
           accessibilityLabel="We can help you"
-          backgroundColor='rgb(235, 192, 47)'
+          backgroundColor="rgb(235, 192, 47)"
         />
+        </View>
   
       </View>
     );
@@ -63,13 +65,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "rgb(188,204,189)"
   },
-  buttonBg: {
-    width: 80,
-    height: 30,
-    left: 150,
-    top: 410,
-    position: "absolute",
-    
+  buttonPanel: {
+    flexDirection: 'row',
+    paddingTop: 30
   }
 });
 

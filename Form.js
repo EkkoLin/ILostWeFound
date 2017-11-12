@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Alert, AppRegistry, Text, TextInput, View, Button } from 'react-native';
 import { StackNavigator } from "react-navigation";
+import 
 
 export default class Form extends Component {
     static navigationOptions = {
@@ -34,11 +35,11 @@ export default class Form extends Component {
                 <Text>imageURL: </Text>
                 <TextInput onChangeText={ (url) => this.setState({url}) } />
                 <Text>Where: </Text>
-                <TextInput onChangeText={ () => this.setState({where}) } />
+                <TextInput onChangeText={ (where) => this.setState({where}) } />
                 <Text>Contact: </Text>
-                <TextInput onChangeText={ () => this.setState({contact}) } />
+                <TextInput onChangeText={ (contact) => this.setState({contact}) } />
                 <Text>Reward: </Text>
-                <TextInput onChangeText={ () => this.setState({reward}) } />
+                <TextInput onChangeText={ (reward) => this.setState({reward}) } />
                 <Button
                     title="Submit"
                     color="#841584"

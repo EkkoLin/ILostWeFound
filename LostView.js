@@ -16,6 +16,7 @@ export default class LostView extends PureComponent {
     this.state = {
       items: [],
       loading: false,
+      loadMore: false,
       error: null,
       refreshing: false
     };
@@ -34,22 +35,33 @@ export default class LostView extends PureComponent {
         items: lostItemsJSON,
         // error: res.error || null,
         loading: false,
+        loadMore: false,
         refreshing: false
       });
     }, 1500);
   }
 
   handleRefresh = () => {
-    this.setState({
-      refreshing: true
-    });
-    const items = lostItemsJSON;    
-    this.setState({items, refreshing: false});
-  }
+    this.setState(
+      {
+        refreshing: true
+      },
+      () => {
+        this.makeRequest();
+      }
+    );
+  };
 
   handleLoadMore = () => {
-    this.makeRequest();
-  }
+    this.setState(
+      {
+        loadMore: true
+      },
+      () => {
+        this.makeRequest();
+      }
+    );
+  };
 
   render() {
     const { navigate } = this.props.navigation;
@@ -93,7 +105,7 @@ export default class LostView extends PureComponent {
             refreshing={this.state.refreshing}
             onRefresh={this.handleRefresh}
             onEndReached={this.handleLoadMore}
-            onEndReachedThreshold={5}
+            onEndReachedThreshold={100}
           />
         </List>
       </View>

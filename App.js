@@ -5,6 +5,7 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import { StackNavigator } from "react-navigation";
 import Form from "./Form";
 import Details from "./Detail";
+import ImageBrowser from './ImageBrowser';
 import { Button } from "react-native-elements";
 
 class HomeScreen extends Component {
@@ -43,7 +44,8 @@ const Navigator = StackNavigator({
   LostView: { screen: LostView },
   FoundView: { screen: FoundView },
   Form: { screen: Form },
-  Details: { screen: Details }
+  Details: { screen: Details },
+  ImageBrowser: { screen: ImageBrowser }
 });
 
 const styles = StyleSheet.create({

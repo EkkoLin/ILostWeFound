@@ -30,7 +30,7 @@ export default class FoundView extends Component {
         <Button 
           large
           onPress={ () => navigate("Form") }
-          title="Post New"
+          title="ADD FOUND"
           backgroundColor="rgb(235, 192, 47)"
           accessibilityLabel="Post something new"
         />

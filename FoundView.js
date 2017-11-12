@@ -7,9 +7,16 @@ export default class FoundView extends Component {
     title: "FoundView"
   };
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         <Text>Found Screen</Text>
+        <Button 
+          onPress={ () => navigate("Form") }
+          title="Post New"
+          color="#841584"
+          accessibilityLabel="Post something new"
+        />
       </View>
     );
   }

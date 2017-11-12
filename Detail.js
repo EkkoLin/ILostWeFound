@@ -7,10 +7,15 @@ export default class Details extends Component {
     title: "Details"
   };
 
+  constructor() {
+      super();
+  }
+
   render() {
+    console.log(this.props.item);
     return (
       <View>
-        <Text>Hello World</Text>
+        <Text>{this.props.item}</Text>
       </View>
     );
   }

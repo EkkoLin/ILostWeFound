@@ -63,6 +63,7 @@ export default class Form extends Component {
           title="choose/take a picture"
           backgroundColor="rgb(29, 172, 231)"
           accessibilityLabel="Camera"
+          onPress={() => navigate("ImageBrowser")}
         />
 
         <Button

@@ -22,6 +22,14 @@ class HomeScreen extends Component {
         style={styles.logo}
         source={require('./Assets/logo.png')}
         />
+        <Image
+        style={styles.buttonBg}
+        source={require('./Assets/buttons_PNG10.png')}
+        />
+        <Image
+        style={styles.buttonBg}
+        source={require('./Assets/buttons_PNG10.png')}
+        />
         <Button
           onPress={() => navigate("LostView")}
           title="Lost"
@@ -58,9 +66,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "rgb(188,204,189)"
   },
-  button: {
-    backgroundColor: 'rgb(225,113,50)',
-    fontSize: 20
+  buttonBg: {
+    width: 80,
+    height: 30,
+    left: 150,
+    top: 410,
+    position: "absolute",
+    
   }
 });
 

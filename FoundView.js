@@ -1,9 +1,10 @@
 import React, { PureComponent, Component } from "react";
-import { View, Text, FlatList, TouchableOpacity, ScrollView } from "react-native";
+import { ListView, View, Text, FlatList, TouchableOpacity, ScrollView, RefreshControl } from "react-native";
 import { StackNavigator } from "react-navigation";
 import { List, ListItem } from "react-native-elements";
 import foundItemsJSON from './ModelData/found.json';
 import { Button } from 'react-native-elements';
+import Details from "./Detail";
 
 export default class FoundView extends Component {
   static navigationOptions = {
@@ -13,7 +14,8 @@ export default class FoundView extends Component {
   constructor() {
     super();
     this.state = {
-      items: []
+      items: [],
+      refreshing: false
     };
   }
 
@@ -21,6 +23,15 @@ export default class FoundView extends Component {
     const items = foundItemsJSON;
     this.setState({ items });
   }
+
+  _onRefresh() {
+    this.setState({refreshing: true});
+    const items = foundItemsJSON;
+    console.log("refreshing");
+    this.setState({ items, refreshing: false });
+
+  }
+
 
   render() {
     const { navigate } = this.props.navigation;
@@ -34,7 +45,7 @@ export default class FoundView extends Component {
           backgroundColor="rgb(235, 192, 47)"
           accessibilityLabel="Post something new"
         />
-        <ScrollView>
+        <ScrollView onMomentumScrollEnd={this._onRefresh.bind(this)}>
           <List>
             <FlatList
               data={this.state.items}
@@ -46,6 +57,10 @@ export default class FoundView extends Component {
                   title={item.name}
                   subtitle={item.where}
                   avatar={{ uri: item.imageUrl }}
+                  onPress={() => {
+                    <Details item={item} />
+                    navigate("Details");
+                  }}
                 />
               )}
               keyExtractor={item => item.contact}

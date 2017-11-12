@@ -40,13 +40,8 @@ export default class FoundView extends Component {
         <Text style={{ fontSize: 18, fontWeight: 'bold', textAlign: 'center', color: 'rgb(117,84,82)' }}>We Found</Text>
         <Button
           large
-<<<<<<< HEAD
-          onPress={() => navigate("Form")}
-          title="Post New"
-=======
           onPress={ () => navigate("Form") }
           title="ADD FOUND"
->>>>>>> master
           backgroundColor="rgb(235, 192, 47)"
           accessibilityLabel="Post something new"
         />

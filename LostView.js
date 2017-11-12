@@ -55,38 +55,6 @@ export default class LostView extends PureComponent {
     const { navigate } = this.props.navigation;
     return (
       <View>
-<<<<<<< HEAD
-        <Text style={{ fontSize: 18, fontWeight: 'bold', textAlign: 'center', color: 'rgb(117,84,82)' }}>I Lost</Text>
-        <Button
-          large
-          onPress={() => navigate("Form")}
-          title="Post New"
-          backgroundColor="rgb(235, 192, 47)"
-          accessibilityLabel="Post something new"
-        />
-        <ScrollView>
-          <List>
-            <FlatList
-              data={this.state.items}
-              extraData={this.state}
-              renderItem={({ item }) => (
-                <ListItem
-                  roundAvatar
-                  key={item.contact}
-                  title={item.name}
-                  subtitle={item.where}
-                  avatar={{ uri: item.imageUrl }}
-                  onPress={() => {
-                    <Details item={item} />
-                    navigate("Details");
-                  }}
-                />
-              )}
-              keyExtractor={item => item.contact}
-            />
-          </List>
-        </ScrollView>
-=======
         <Text
           style={{
             fontSize: 18,
@@ -128,7 +96,6 @@ export default class LostView extends PureComponent {
             onEndReachedThreshold={5}
           />
         </List>
->>>>>>> master
       </View>
     );
   }

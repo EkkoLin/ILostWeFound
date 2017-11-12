@@ -1,5 +1,5 @@
 import React, { PureComponent, Component } from "react";
-import { View, Text, FlatList, TouchableOpacity } from "react-native";
+import { View, Text, FlatList, TouchableOpacity, ScrollView } from "react-native";
 import { List, ListItem } from "react-native-elements";
 import { StackNavigator } from "react-navigation";
 import Details from "./Detail";
@@ -27,34 +27,36 @@ export default class LostView extends PureComponent {
     const { navigate } = this.props.navigation;
     return (
       <View>
-        <Text style={{ fontSize: 18, fontWeight: 'bold', textAlign: 'center', color: 'rgb(117,84,82)'}}>I Lost</Text>
-        <Button 
+        <Text style={{ fontSize: 18, fontWeight: 'bold', textAlign: 'center', color: 'rgb(117,84,82)' }}>I Lost</Text>
+        <Button
           large
-          onPress={ () => navigate("Form") }
+          onPress={() => navigate("Form")}
           title="Post New"
           backgroundColor="rgb(235, 192, 47)"
           accessibilityLabel="Post something new"
         />
-      <List>
-        <FlatList
-          data={this.state.items}
-          extraData={this.state}
-          renderItem={({ item }) => (
-            <ListItem
-              roundAvatar
-              key={item.contact}
-              title={item.name}
-              subtitle={item.where}
-              avatar={{ uri: item.imageUrl }}
-              onPress={() => {
-                <Details item={item} />
-                navigate("Details");
-              }}
+        <ScrollView>
+          <List>
+            <FlatList
+              data={this.state.items}
+              extraData={this.state}
+              renderItem={({ item }) => (
+                <ListItem
+                  roundAvatar
+                  key={item.contact}
+                  title={item.name}
+                  subtitle={item.where}
+                  avatar={{ uri: item.imageUrl }}
+                  onPress={() => {
+                    <Details item={item} />
+                    navigate("Details");
+                  }}
+                />
+              )}
+              keyExtractor={item => item.contact}
             />
-          )}
-          keyExtractor={item => item.contact}
-        />
-      </List>
+          </List>
+        </ScrollView>
       </View>
     );
   }

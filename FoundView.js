@@ -1,5 +1,5 @@
 import React, { PureComponent, Component } from "react";
-import { View, Text, FlatList, TouchableOpacity } from "react-native";
+import { View, Text, FlatList, TouchableOpacity, ScrollView } from "react-native";
 import { StackNavigator } from "react-navigation";
 import { List, ListItem } from "react-native-elements";
 import foundItemsJSON from './ModelData/found.json';
@@ -26,30 +26,32 @@ export default class FoundView extends Component {
     const { navigate } = this.props.navigation;
     return (
       <View >
-        <Text style={{ fontSize: 18, fontWeight: 'bold', textAlign: 'center', color: 'rgb(117,84,82)'}}>We Found</Text>
-        <Button 
+        <Text style={{ fontSize: 18, fontWeight: 'bold', textAlign: 'center', color: 'rgb(117,84,82)' }}>We Found</Text>
+        <Button
           large
-          onPress={ () => navigate("Form") }
+          onPress={() => navigate("Form")}
           title="Post New"
           backgroundColor="rgb(235, 192, 47)"
           accessibilityLabel="Post something new"
         />
-        <List>
-        <FlatList
-          data={this.state.items}
-          extraData={this.state}
-          renderItem={({ item }) => (
-            <ListItem
-              roundAvatar
-              key={item.contact}
-              title={item.name}
-              subtitle={item.where}
-              avatar={{ uri: item.imageUrl }}
+        <ScrollView>
+          <List>
+            <FlatList
+              data={this.state.items}
+              extraData={this.state}
+              renderItem={({ item }) => (
+                <ListItem
+                  roundAvatar
+                  key={item.contact}
+                  title={item.name}
+                  subtitle={item.where}
+                  avatar={{ uri: item.imageUrl }}
+                />
+              )}
+              keyExtractor={item => item.contact}
             />
-          )}
-          keyExtractor={item => item.contact}
-        />
-      </List>
+          </List>
+        </ScrollView>
       </View>
     );
   }

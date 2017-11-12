@@ -35,7 +35,7 @@ export default class Form extends Component {
     const { navigate } = this.props.navigation;
     return (
       <View>
-        <FormLabel>NAME</FormLabel>
+        <FormLabel>ITEM NAME</FormLabel>
         <FormInput
           onChangeText={name =>
             typeof name !== 'string' ? (
@@ -64,6 +64,13 @@ export default class Form extends Component {
         <FormValidationMessage>
           {"This field is required"}
         </FormValidationMessage>
+
+        <Button
+          large
+          title="choose/take a picture"
+          backgroundColor="rgb(29, 172, 231)"
+          accessibilityLabel="Camera"
+        />
 
         <Button
           large

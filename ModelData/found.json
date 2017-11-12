@@ -1,0 +1,62 @@
+[
+    {
+    "name": "Kitty - Cat",
+    "imageUrl": "https://news.nationalgeographic.com/content/dam/news/photos/000/755/75552.ngsversion.1422285553360.adapt.1900.1.jpg",
+    "where": "1720 80th Street, Brooklyn NY",
+    "contact": "646-123-1234"
+    },
+    {
+    "name": "B.guest Wifi",
+    "imageUrl": "https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/challenge_thumbnails/000/494/771/datas/original.png",
+    "where": "B Building # 22 Warrington Ave Brooklyn New York 11205",
+    "contact": "cunyhackathon2017f.slack.com"
+    },
+    {
+    "name": "yellow glove",
+    "imageUrl": "http://turtleskin.com/media/catalog/product/cache/1/image/1200x/040ec09b1e35df139433887a97daa66f/0/0/0000052_aramid-insider-ts-300-heat-glove.jpeg",
+    "where": "Brooklyn College Learning Center",
+    "contact": "232-123-1234"
+    },
+    {
+    "name": "sunglass",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0756/5623/products/DSC_5567_copy.jpg?v=1499539688",
+    "where": "CUNY Graduate Center",
+    "contact": "123@gmail.com"
+    },
+    {
+    "name": "yellow doggie",
+    "imageUrl": "http://imgs.soufun.com/news/2015_08/17/esf/1439791061044_000.png",
+    "where": "9 Ave and 39 street Brooklyn",
+    "contact": "sensei@gmail.com"
+    },
+    {
+    "name": "mad cat",
+    "imageUrl": "http://moziru.com/images/grumpy-cat-clipart-mad-cat-10.jpg",
+    "where": "80 Street & 18 ave",
+    "contact": "jiesika@hotmail.com"
+    },
+    {
+    "name": "Hamster",
+    "imageUrl": "https://i.ytimg.com/vi/xkxjNZComZg/maxresdefault.jpg",
+    "where": "622 11th Ave",
+    "contact": "876-342-122"
+    },
+    {
+    "name": "black scraf",
+    "imageUrl": "https://www.cosstores.com/Content/ProductContent/0302963004/0302963004_12_0.jpg",
+    "where": "Atlantic Avenue Station",
+    "contact": "718-232-7645"
+    },
+    {
+    "name": "iphoneX, metro card, school ID",
+    "imageUrl": "https://cdn.macrumors.com/article-new/2017/09/iphonexdesign.jpg",
+    "where": "Coney Island Train Station",
+    "contact": "kk@gmail.com"
+    },
+    {
+    "name": "lizard",
+    "imageUrl": "https://az616578.vo.msecnd.net/files/2016/08/06/636060542071224507558709495_LLizard.jpg",
+    "where": "Queens College",
+    "contact": "alberto@gmail.com"
+    }
+    ]

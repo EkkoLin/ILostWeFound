@@ -3,18 +3,31 @@ import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import { List, ListItem } from "react-native-elements";
 import { StackNavigator } from "react-navigation";
 import Details from "./Detail";
+import lostItemsJSON from './ModelData/lost.json';
 
 export default class LostView extends PureComponent {
   static navigationOptions = {
     title: "LostView"
   };
 
+  constructor() {
+    super();
+    this.state = {
+      items: []
+    };
+  }
+
+  componentDidMount() {
+    const items = lostItemsJSON;
+    this.setState({ items });
+  }
+
   render() {
     const { navigate } = this.props.navigation;
     return (
       <List>
         <FlatList
-          data={lostItems}
+          data={this.state.items}
           extraData={this.state}
           renderItem={({ item }) => (
             <ListItem
@@ -36,7 +49,7 @@ export default class LostView extends PureComponent {
   }
 }
 
-const lostItems = [
+/*const lostItems = [
   {
     name: "Kitty - Cat",
     imageUrl:
@@ -115,3 +128,4 @@ const lostItems = [
     reward: "$10"
   }
 ];
+*/

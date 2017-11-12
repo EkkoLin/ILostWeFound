@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Alert, AppRegistry, Text, TextInput, View, Button } from 'react-native';
 import { StackNavigator } from "react-navigation";
-import 
 
 export default class Form extends Component {
     static navigationOptions = {

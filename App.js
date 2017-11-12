@@ -3,6 +3,7 @@ import LostView from "./LostView";
 import FoundView from "./FoundView";
 import { StyleSheet, Text, View, Button } from "react-native";
 import { StackNavigator } from "react-navigation";
+import Form from './Form';
 
 class HomeScreen extends Component {
   static navigationOptions = {
@@ -34,7 +35,8 @@ class HomeScreen extends Component {
 const Navigator = StackNavigator({
   Home: { screen: HomeScreen },
   LostView: { screen: LostView },
-  FoundView: { screen: FoundView }
+  FoundView: { screen: FoundView },
+  Form : { screen: Form },
 });
 
 export default class App extends Component {

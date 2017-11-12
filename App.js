@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import LostView from "./LostView";
 import FoundView from "./FoundView";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { StyleSheet, Text, View, Button, Image } from "react-native";
 import { StackNavigator } from "react-navigation";
 import Form from './Form';
 
@@ -10,11 +10,16 @@ class HomeScreen extends Component {
     title: "Home"
   };
 
+  
+
   render() {
     const { navigate } = this.props.navigation;
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>I found your losts</Text>
+        <Image
+        style={styles.logo}
+        source={require('./Assets/logo.png')}
+        />
         <Button
           onPress={() => navigate("LostView")}
           title="Lost"
@@ -38,6 +43,14 @@ const Navigator = StackNavigator({
   FoundView: { screen: FoundView },
   Form : { screen: Form },
 });
+
+const styles = StyleSheet.create({
+  logo: {
+    width: 200,
+    height: 200
+  }
+});
+
 
 export default class App extends Component {
   render() {

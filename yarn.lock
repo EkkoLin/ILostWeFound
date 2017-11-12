@@ -4539,6 +4539,10 @@ react-native-gesture-handler@1.0.0-alpha.28:
   dependencies:
     prop-types "^15.5.10"
 
+react-native-img-button@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-img-button/-/react-native-img-button-1.0.1.tgz#766033b2c0125bc281d72e0bd0dd6cc05450fa11"
+
 react-native-maps@0.17.0:
   version "0.17.0"
   resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.17.0.tgz#d10fa94a049432c46b6ee03fe9db84c83da65c8b"

@@ -27,8 +27,7 @@ export default class Form extends Component {
   }
 
   onButtonPress() {
-    let alertString = "Your name is " + this.state.name;
-    Alert.alert(alertString);
+    (this.state.name === "") ? Alert.alert("Please enter your name") : null;
   }
 
   render() {
@@ -36,16 +35,10 @@ export default class Form extends Component {
     return (
       <View>
         <FormLabel>ITEM NAME</FormLabel>
-        <FormInput
-          onChangeText={name =>
-            typeof name !== 'string' ? (
-              <FormValidationMessage>
-                {"This field is required"}
-              </FormValidationMessage>
-            ) : (
-              this.setState({ name })
-            )}
-        />
+        <FormInput onChangeText={name => this.setState({ name })}/>
+        <FormValidationMessage>
+          {"This field is required"}
+        </FormValidationMessage>
 
         <FormLabel>WHERE</FormLabel>
         <FormInput onChangeText={where => this.setState({ where })} />
@@ -53,7 +46,7 @@ export default class Form extends Component {
           {"This field is required"}
         </FormValidationMessage>
 
-        <FormLabel>Contact</FormLabel>
+        <FormLabel>CONTACT</FormLabel>
         <FormInput onChangeText={contact => this.setState({ contact })} />
         <FormValidationMessage>
           {"This field is required"}
@@ -62,7 +55,7 @@ export default class Form extends Component {
         <FormLabel>REWARD</FormLabel>
         <FormInput onChangeText={reward => this.setState({ reward })} />
         <FormValidationMessage>
-          {"This field is required"}
+          {"Better have something"}
         </FormValidationMessage>
 
         <Button

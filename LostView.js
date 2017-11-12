@@ -4,6 +4,7 @@ import { List, ListItem } from "react-native-elements";
 import { StackNavigator } from "react-navigation";
 import Details from "./Detail";
 import lostItemsJSON from './ModelData/lost.json';
+import { Button } from 'react-native-elements';
 
 export default class LostView extends PureComponent {
   static navigationOptions = {
@@ -25,6 +26,15 @@ export default class LostView extends PureComponent {
   render() {
     const { navigate } = this.props.navigation;
     return (
+      <View>
+        <Text style={{ fontSize: 18, fontWeight: 'bold', textAlign: 'center', color: 'rgb(117,84,82)'}}>I Lost</Text>
+        <Button 
+          large
+          onPress={ () => navigate("Form") }
+          title="Post New"
+          backgroundColor="rgb(235, 192, 47)"
+          accessibilityLabel="Post something new"
+        />
       <List>
         <FlatList
           data={this.state.items}
@@ -45,6 +55,7 @@ export default class LostView extends PureComponent {
           keyExtractor={item => item.contact}
         />
       </List>
+      </View>
     );
   }
 }

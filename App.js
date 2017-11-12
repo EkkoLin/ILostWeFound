@@ -4,6 +4,7 @@ import FoundView from "./FoundView";
 import { StyleSheet, Text, View, Button, Image } from "react-native";
 import { StackNavigator } from "react-navigation";
 import Form from './Form';
+import Details from './Detail';
 
 
 class HomeScreen extends Component {
@@ -43,6 +44,7 @@ const Navigator = StackNavigator({
   LostView: { screen: LostView },
   FoundView: { screen: FoundView },
   Form : { screen: Form },
+  Details : {screen: Details}
 });
 
 const styles = StyleSheet.create({

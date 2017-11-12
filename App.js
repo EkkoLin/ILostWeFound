@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import LostView from "./LostView";
 import FoundView from "./FoundView";
-import { StyleSheet, Text, View, Button, Image } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 import { StackNavigator } from "react-navigation";
 import Form from './Form';
 import Details from './Detail';
-
+import { Button } from 'react-native-elements'
 
 class HomeScreen extends Component {
   static navigationOptions = {
@@ -22,22 +22,29 @@ class HomeScreen extends Component {
         style={styles.logo}
         source={require('./Assets/logo.png')}
         />
+        <View style={styles.buttonPanel} >
         <Button
           onPress={() => navigate("LostView")}
           title="Lost"
-          color="#841584"
+          color="rgb(112,99,85)"
           accessibilityLabel="What did you lost?"
+          backgroundColor="rgb(235, 192, 47)"
         />
         <Button
           onPress={() => navigate("FoundView")}
           title="Found"
-          color="#841584"
+          color="rgb(112,99,85)"
           accessibilityLabel="We can help you"
+          backgroundColor="rgb(235, 192, 47)"
         />
+        </View>
+  
       </View>
     );
   }
 }
+
+
 
 const Navigator = StackNavigator({
   Home: { screen: HomeScreen },
@@ -58,9 +65,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "rgb(188,204,189)"
   },
-  button: {
-    backgroundColor: 'rgb(225,113,50)',
-    fontSize: 20
+  buttonPanel: {
+    flexDirection: 'row',
+    paddingTop: 30
   }
 });
 

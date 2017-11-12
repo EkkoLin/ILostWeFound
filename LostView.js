@@ -2,6 +2,7 @@ import React, { PureComponent, Component } from "react";
 import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import { List, ListItem } from "react-native-elements";
 import { StackNavigator } from "react-navigation";
+import Form from './Form';
 
 export default class LostView extends PureComponent {
   static navigationOptions = {
@@ -29,6 +30,7 @@ export default class LostView extends PureComponent {
   );
 
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <List>
         <FlatList

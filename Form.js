@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, Text, TextInput, View } from 'react-native';
+import { Alert, AppRegistry, Text, TextInput, View, Button } from 'react-native';
 import { StackNavigator } from "react-navigation";
 
 export default class Form extends Component {
@@ -7,20 +7,44 @@ export default class Form extends Component {
         title: "Post New Object"
     };
 
+    constructor() {
+        super();
+        this.state = {
+            name: '',
+            url: '',
+            where: '',
+            contact: '',
+            reward: '',
+        };
+
+        this.onButtonPress = this.onButtonPress.bind(this);
+    }
+
+    onButtonPress() {
+        let alertString = 'Your name is ' + this.state.name;
+        Alert.alert(alertString);
+    }
+
     render() {
         const { navigate } = this.props.navigation;
         return (
             <View>
                 <Text>Name: </Text>
-                <TextInput />
+                <TextInput onChangeText={ (name) => this.setState({name:name}) } />
                 <Text>imageURL: </Text>
-                <TextInput />
+                <TextInput onChangeText={ (url) => this.setState({url}) } />
                 <Text>Where: </Text>
-                <TextInput />
+                <TextInput onChangeText={ () => this.setState({where}) } />
                 <Text>Contact: </Text>
-                <TextInput />
+                <TextInput onChangeText={ () => this.setState({contact}) } />
                 <Text>Reward: </Text>
-                <TextInput />
+                <TextInput onChangeText={ () => this.setState({reward}) } />
+                <Button
+                    title="Submit"
+                    color="#841584"
+                    onPress={ this.onButtonPress }
+                    accessibilityLabel="Submit"
+                />
             </View>
         );
     }

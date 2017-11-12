@@ -15,7 +15,7 @@ class HomeScreen extends Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <View style={styles.container}>
         <Image
         style={styles.logo}
         source={require('./Assets/logo.png')}
@@ -48,6 +48,11 @@ const styles = StyleSheet.create({
   logo: {
     width: 200,
     height: 200
+  },
+  container: {
+    flex: 1, 
+    alignItems: "center", 
+    justifyContent: "center"
   }
 });
 

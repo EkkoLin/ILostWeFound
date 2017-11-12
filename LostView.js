@@ -2,7 +2,7 @@ import React, { PureComponent, Component } from "react";
 import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import { List, ListItem } from "react-native-elements";
 import { StackNavigator } from "react-navigation";
-import Form from "./Form";
+import Details from "./Detail";
 
 export default class LostView extends PureComponent {
   static navigationOptions = {
@@ -19,10 +19,14 @@ export default class LostView extends PureComponent {
           renderItem={({ item }) => (
             <ListItem
               roundAvatar
+              key={item.contact}
               title={item.name}
               subtitle={item.where}
               avatar={{ uri: item.imageUrl }}
-              onPress={() => navigate("Details")}
+              onPress={() => {
+                <Details item={item} />
+                navigate("Details");
+              }}
             />
           )}
           keyExtractor={item => item.contact}
@@ -32,7 +36,7 @@ export default class LostView extends PureComponent {
   }
 }
 
-let lostItems = [
+const lostItems = [
   {
     name: "Kitty - Cat",
     imageUrl:

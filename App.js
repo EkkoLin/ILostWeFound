@@ -52,7 +52,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1, 
     alignItems: "center", 
-    justifyContent: "center"
+    justifyContent: "center",
+    backgroundColor: "rgb(188,204,189)"
+  },
+  button: {
+    backgroundColor: 'rgb(225,113,50)',
+    fontSize: 20
   }
 });
 
